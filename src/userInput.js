@@ -1,25 +1,22 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { setAge, setName, setColor } from './actions';
-
-class UserInput extends Component{
-	onSubmit(event){
-		event.preventDefault();
-/*		const {age, userName, color} = values;
-		this.props.dispatch(setAge(age));
-		this.props.dispatch(setName(userName));
-		this.props.dispatch(setColor(color));*/
-	}
-	render(){
+import { setAdjective, setName, setColor } from './actions';
+//change the function below to a class
+export function UserInput (props){
 		return (
-			<div className="userInput">
-				<h1>Write a Pulitizer (please!)</h1>
-				<form>
-
+				<form className="userInput" onSubmit={e => e.preventDefault()}>
+					<label htmlFor="userName">Name</label>
+					<input type="text" value={props.userName} 
+					onChange={e => props.dispatch(setName(e.target.value))}/>
+					<label htmlFor="adjective">Adjective</label>
+					<input type="text" value={props.adjective}
+					onChange={e => props.dispatch(setAdjective(e.target.value))}/>
+					<label htmlFor="color">Color</label>
+					<input type="text" value={props.Color}
+					onChange={e => props.dispatch(setColor(e.target.value))}/>
 				</form>
-			</div>
+			
 			);
-	}
 }
 
-export default UserInput;
+export default connect()(UserInput);

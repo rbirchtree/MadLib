@@ -1,13 +1,13 @@
 export const SET_NAME = 'SET_NAME';
-export const setName = name => ({
+export const setName = userName => ({
 	type: SET_NAME,
-	name
+	userName
 });
 
-export const SET_AGE = 'SET_AGE';
-export const setAge = age => ({
-	type: SET_AGE,
-	age
+export const SET_ADJECTIVE = 'SET_ADJECTIVE';
+export const setAdjective = adjective => ({
+	type: SET_ADJECTIVE,
+	adjective
 });
 
 export const SET_COLOR = 'SET_COLOR';

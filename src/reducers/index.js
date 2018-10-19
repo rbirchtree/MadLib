@@ -1,16 +1,16 @@
-import { SET_AGE, SET_COLOR, SET_NAME } from '../actions';
+import { SET_ADJECTIVE, SET_COLOR, SET_NAME } from '../actions';
 
 const initalState = {
-	name: 'Bob',
-	age: 42,
+	userName: 'Bob',
+	adjective: 'precarious',
 	color: 'blue',
 	randomPhrase: Math.round(Math.random() *3) + 1
 };
 //use random phrase in userstory
 export const madLibReducer = (state=initalState, action) => {
-	if (action.type === SET_AGE) {
+	if (action.type === SET_ADJECTIVE) {
 		return Object.assign({},state,{
-			age: action.age
+			adjective: action.adjective
 		});
 	}
 	else if (action.type === SET_COLOR){
@@ -20,7 +20,7 @@ export const madLibReducer = (state=initalState, action) => {
 	}
 	else if(action.type === SET_NAME){
 		return Object.assign({}, state,{
-			name: action.name
+			userName: action.userName
 		});
 	}
 	return state;
