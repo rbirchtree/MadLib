@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import { setAdjective, setName, setColor } from './actions';
-//change the function below to a class
+
 export function UserInput (props){
 		return (
 				<form className="userInput" onSubmit={e => e.preventDefault()}>
@@ -18,5 +18,6 @@ export function UserInput (props){
 			
 			);
 }
+
 
 export default connect()(UserInput);
